@@ -616,7 +616,7 @@ campaignTrail_temp.answers_json = [
         "pk": 5090,
         "fields": {
             "question": 1027,
-            "description": "After I immigrated from Austria, I learned that if you work hard and play by the rules, this country is truly open to you. You can achieve anything.  America should be the place where everyone from every country should be welcome to come and live the American Dream. The thing is, people need to come in legally."
+            "description": "After I immigrated from Austria, I learned that if you work hard and play by the rules, this country is truly open to you. You can achieve anything. America should be the place where everyone from every country should be welcome to come and live the American Dream. The thing is, people need to come in legally."
         }
     },
     {
@@ -8682,6 +8682,57 @@ campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/systCJ0.png";
 campaignTrail_temp.candidate_last_name = "Schwarzenegger";
 campaignTrail_temp.running_mate_last_name = "Graham";
 
+campaignTrail_temp.multiple_endings = true;
+endingPicker = (out, totv, aa, quickstats) => {
+
+    function setImage(url) {
+        if(url == '' || url == null) return;
+        let interval = setInterval(function () {
+            img = document.getElementsByClassName("person_image")[0];
+            if (img != null) {
+                img.src = url;
+                clearInterval(interval);
+            }
+        }, 50);
+    }
+
+    if(quickstats[0] == 0) {
+        setImage("https://cdn.justjared.com/wp-content/uploads/2007/10/shriver-teeth/maria-shriver-picking-teeth-08.jpg");
+        return `<h3>"That's what happens when you say that stuff."</h3><p>That is what your wife, Maria Shriver, said to you the moment that the final calls were made in the race between Hillary Clinton and Mike Huckabee. You just go to bed, because you don't want to think about anything more for the rest of the day.<p><p>The next day, you see suitcases in your living room. It's not because you're going on a trip, it's because your wife is leaving you. She got so humiliated because of how you self-sabotaged your campaign. You also did cheat on her if you don't remember.<p><p>Right before she reaches the door, you come from behind, with a gun in your hand pointing at her head, dressed up like The Terminator. You pull the trigger.<p><p>Consider that a divorce! Hasta la vista, baby. </p>`;
+    }
+    if(quickstats[0] > 0 && quickstats[0] < 173) {
+        setImage("https://f4.bcbits.com/img/a2636831135_5.jpg");
+        return `<h3>You are the one that got terminated, by a longshot.</h3><p>This was a massive defeat for the Republicans. Did Mike Huckabee do so well in the South giving Hillary some states down there? Or did your campaign just totally collapse?<p><p>You receive a letter from Mike Huckabee, and it says "I hope you leave enough room in your concession speech for my fist because I’m going to ram it into your stomach and break your goddamn spine!" The conservative wing of the party is so mad at you right now, because you caused the party to split in a very winnable election. For now, you can enjoy a peaceful retirement in Los Angeles, with some involvement in Hollywood.</p>`;
+    }
+    if(quickstats[0] > 172 && quickstats[0] < 207) {
+        setImage("");
+        return `<h3>To be, or not to be... Not to be.</h3><p>You failed in terminating Hillary Clinton. Matter of fact, you did worse than 2012, but not as bad as 2008. It could've really been the economy that was a key issue this year, or Mike Huckabee took too many votes away from you in the South. Nonetheless, it was a tough loss for your campaign and the Republicans. <p><p>But for now, you can certainly enjoy Hollywood or a peaceful retirement. You probably won't have any more luck in a political career, however.</p>`;
+    }
+    if(quickstats[0] > 206 && quickstats[0] < 269) {
+        setImage("");
+        return `<h3>Strength does not come from winning. Your struggles develop your strengths.</h3><p>It was a loss, but it was a fairly close race. You did outperform both Mitt Romney and John McCain, but you didn't outperform them enough to get to the White House.<p><p>The Huckabee campaign and supporters are extremely angry at you, especially considering that a liberal to moderate Republican lost the presidency. However, it very well might be their fault because Huckabee/Santorum played splinter this year.<p><p>Your political career is likely over, but you can still go back to Hollywood and continue your acting career, or you can just live a peaceful retirement.</p>`;
+    }
+    if(quickstats[0] == 269) {
+        setImage("");
+        return `<h3>Wow! You barely won the 2016 election.</h3><p>No candidate secured a majority in the Electoral College. However, the Republicans won a majority in Congress. It is a good possibility that Mike Huckabee took enough votes away to deadlock the Electoral College, however. In the end, the Republican legislatures in the states that he won will elevate you to the Presidency. Time will tell how things go in that regard. But you can begin packing for the White House.</p>`;
+    }
+    if(quickstats[0] > 269 && quickstats[0] < 364) {
+        setImage("");
+        return `<h3>From Terminator, to Governator, to Presidator.</h3><p>You have done it. You have successfully terminated Hillary Clinton and Mike Huckabee to become the 45th President of the United States. It took a lot of work for you to get here, with a tough fight in the Republican primary and having two challengers in a general election. But it seems like after 8 years of Obama, the country was ready for a change.<p><p>There were no major surprises in the states you won, except perhaps the Midwest. Even the narrow victory gave your party control of the Senate, but a lot of the new Senators are much more conservative than you are. So you might face a lot of opposition among your party, but you can also get a bit of wavering Democratic support that may offset it.<p><p>For the time being though, just be happy that you've achieved your goal of following the footsteps of our 40th President Ronald Reagan, from being an actor to the Republican Governor of California to President. </p>`;
+    }
+    if(quickstats[0] > 363 && quickstats[0] < 427) {
+        setImage("");
+        return `<h3>Well, that hit the spot. Of course, I'm a terminator.</h3><p>Those were the first words in your victory speech at Universal Studios Hollywood. It was a very convincing victory for you this year. You might have won your home state of California as well. It really seems like a lifelong Republican that has a heart is able to do very well, a lot like your idol Ronald Reagan. He was an actor, then the Governor of California, then President of the United States. You took the exact same route, and you emphasize Reagan and his achievements a lot throughout your victory speech.<p><p>Where you go from here is up to you; the Republican victory this year gave a lot of seats in the House and Senate to your party, and you have the power to pass as much legislation as you want. Just be mindful of the more conservative wing of the Republican Party.</p>`;
+    }
+    if(quickstats[0] > 426 && quickstats[0] < 538) {
+        setImage("https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12531_p_v13_am.jpg");
+        return `<h3>This is surely a Total Recall, alright!</h3><p>You sure won in a landslide election. Matter of fact, the last Republican presidential candidate to do as well as you did was your idol, Ronald Reagan. Not even George H.W. Bush did as well as you.<p><p>You have huge margins in the House and Senate as a result of your margin of victory, and you have more power than ever to pass as much legislation as you want. The Democrats are absolutely distraught right now, and some think that someone further to the left and scandal-free would've done a lot better than Hillary Clinton. But that doesn't matter, right? Just start packing for the White House, and remember how you got here, and how Reagan did as well.</p>`;
+    }
+    if(quickstats[0] == 538) {
+        setImage("https://i.cbc.ca/1.3706918.1470306660!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/arnold-terminator.jpg");
+        return `<h3>Hasta la vista, baby!</h3><p>Not only did you win the election and TERMINATE Hillary Clinton, but you also did it with every single electoral vote in the nation.<p>After delivering your victory speech at Universal Studios, you catch a flight to New York. After you land, you buy a gun and put on some sunglasses. This looks like one of your characters that you've played in a film. Maybe your most well-known movie; The Terminator?<p><p>Your next stop is to Hillary Clinton's house in Chappaqua, New York, where you break in. She turns around and says, "How the hell did you get here?" You respond with, "Hasta la vista, baby!".<p><p>BOOM!<p><p>You pull the trigger, and you make the TERMINATION of Hillary Clinton complete.</p>`;
+    }
+}
 
 
 campaignTrail_temp.jet_data = [{
@@ -8698,8 +8749,90 @@ campaignTrail_temp.jet_data = [{
         "canImage": "https://i.imgur.com/PMlq9sD.png",
         "runImage": "https://i.imgur.com/systCJ0.png"
     },
-    "endings_enabled": false,
-    "ending_data": {}
+    "endings_enabled": true,
+    "ending_data": {
+        "1706663607947": {
+            "id": 1706663607947,
+            "variable": 0,
+            "operator": "==",
+            "value": 0,
+            "endingImage": "https://cdn.justjared.com/wp-content/uploads/2007/10/shriver-teeth/maria-shriver-picking-teeth-08.jpg",
+            "endingText": "<h3>\"That's what happens when you say that stuff.\"</h3><p>That is what your wife, Maria Shriver, said to you the moment that the final calls were made in the race between Hillary Clinton and Mike Huckabee. You just go to bed, because you don't want to think about anything more for the rest of the day.<p><p>The next day, you see suitcases in your living room. It's not because you're going on a trip, it's because your wife is leaving you. She got so humiliated because of how you self-sabotaged your campaign. You also did cheat on her if you don't remember.<p><p>Right before she reaches the door, you come from behind, with a gun in your hand pointing at her head, dressed up like The Terminator. You pull the trigger.<p><p>Consider that a divorce! Hasta la vista, baby. </p>",
+            "amount": "0"
+        },
+        "1706663611907": {
+            "id": 1706663611907,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "https://f4.bcbits.com/img/a2636831135_5.jpg",
+            "endingText": "<h3>You are the one that got terminated, by a longshot.</h3><p>This was a massive defeat for the Republicans. Did Mike Huckabee do so well in the South giving Hillary some states down there? Or did your campaign just totally collapse?<p><p>You receive a letter from Mike Huckabee, and it says \"I hope you leave enough room in your concession speech for my fist because I’m going to ram it into your stomach and break your goddamn spine!\" The conservative wing of the party is so mad at you right now, because you caused the party to split in a very winnable election. For now, you can enjoy a peaceful retirement in Los Angeles, with some involvement in Hollywood.</p>",
+            "amount": "0"
+        },
+        "1706663618207": {
+            "id": 1706663618207,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<h3>To be, or not to be... Not to be.</h3><p>You failed in terminating Hillary Clinton. Matter of fact, you did worse than 2012, but not as bad as 2008. It could've really been the economy that was a key issue this year, or Mike Huckabee took too many votes away from you in the South. Nonetheless, it was a tough loss for your campaign and the Republicans. <p><p>But for now, you can certainly enjoy Hollywood or a peaceful retirement. You probably won't have any more luck in a political career, however.</p>",
+            "amount": "172"
+        },
+        "1706663800669": {
+            "id": 1706663800669,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<h3>Strength does not come from winning. Your struggles develop your strengths.</h3><p>It was a loss, but it was a fairly close race. You did outperform both Mitt Romney and John McCain, but you didn't outperform them enough to get to the White House.<p><p>The Huckabee campaign and supporters are extremely angry at you, especially considering that a liberal to moderate Republican lost the presidency. However, it very well might be their fault because Huckabee/Santorum played splinter this year.<p><p>Your political career is likely over, but you can still go back to Hollywood and continue your acting career, or you can just live a peaceful retirement.</p>",
+            "amount": "205"
+        },
+        "1706663815356": {
+            "id": 1706663815356,
+            "variable": 0,
+            "operator": "==",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<h3>Wow! You barely won the 2016 election.</h3><p>No candidate secured a majority in the Electoral College. However, the Republicans won a majority in Congress. It is a good possibility that Mike Huckabee took enough votes away to deadlock the Electoral College, however. In the end, the Republican legislatures in the states that he won will elevate you to the Presidency. Time will tell how things go in that regard. But you can begin packing for the White House.</p>",
+            "amount": "269"
+        },
+        "1706663822150": {
+            "id": 1706663822150,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<h3>From Terminator, to Governator, to Presidator.</h3><p>You have done it. You have successfully terminated Hillary Clinton and Mike Huckabee to become the 45th President of the United States. It took a lot of work for you to get here, with a tough fight in the Republican primary and having two challengers in a general election. But it seems like after 8 years of Obama, the country was ready for a change.<p><p>There were no major surprises in the states you won, except perhaps the Midwest. Even the narrow victory gave your party control of the Senate, but a lot of the new Senators are much more conservative than you are. So you might face a lot of opposition among your party, but you can also get a bit of wavering Democratic support that may offset it.<p><p>For the time being though, just be happy that you've achieved your goal of following the footsteps of our 40th President Ronald Reagan, from being an actor to the Republican Governor of California to President. </p>",
+            "amount": "269"
+        },
+        "1706663826281": {
+            "id": 1706663826281,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "",
+            "endingText": "<h3>Well, that hit the spot. Of course, I'm a terminator.</h3><p>Those were the first words in your victory speech at Universal Studios Hollywood. It was a very convincing victory for you this year. You might have won your home state of California as well. It really seems like a lifelong Republican that has a heart is able to do very well, a lot like your idol Ronald Reagan. He was an actor, then the Governor of California, then President of the United States. You took the exact same route, and you emphasize Reagan and his achievements a lot throughout your victory speech.<p><p>Where you go from here is up to you; the Republican victory this year gave a lot of seats in the House and Senate to your party, and you have the power to pass as much legislation as you want. Just be mindful of the more conservative wing of the Republican Party.</p>",
+            "amount": "363"
+        },
+        "1706663883433": {
+            "id": 1706663883433,
+            "variable": 0,
+            "operator": ">",
+            "value": 0,
+            "endingImage": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12531_p_v13_am.jpg",
+            "endingText": "<h3>This is surely a Total Recall, alright!</h3><p>You sure won in a landslide election. Matter of fact, the last Republican presidential candidate to do as well as you did was your idol, Ronald Reagan. Not even George H.W. Bush did as well as you.<p><p>You have huge margins in the House and Senate as a result of your margin of victory, and you have more power than ever to pass as much legislation as you want. The Democrats are absolutely distraught right now, and some think that someone further to the left and scandal-free would've done a lot better than Hillary Clinton. But that doesn't matter, right? Just start packing for the White House, and remember how you got here, and how Reagan did as well.</p>",
+            "amount": "426"
+        },
+        "1706663916268": {
+            "id": 1706663916268,
+            "variable": 0,
+            "operator": "==",
+            "value": 0,
+            "endingImage": "https://i.cbc.ca/1.3706918.1470306660!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/arnold-terminator.jpg",
+            "endingText": "<h3>Hasta la vista, baby!</h3><p>Not only did you win the election and TERMINATE Hillary Clinton, but you also did it with every single electoral vote in the nation.<p>After delivering your victory speech at Universal Studios, you catch a flight to New York. After you land, you buy a gun and put on some sunglasses. This looks like one of your characters that you've played in a film. Maybe your most well-known movie; The Terminator?<p><p>Your next stop is to Hillary Clinton's house in Chappaqua, New York, where you break in. She turns around and says, \"How the hell did you get here?\" You respond with, \"Hasta la vista, baby!\".<p><p>BOOM!<p><p>You pull the trigger, and you make the TERMINATION of Hillary Clinton complete.</p>",
+            "amount": "538"
+        }
+    }
 }
 ]
 
