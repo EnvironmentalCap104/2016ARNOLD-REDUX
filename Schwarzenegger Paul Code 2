@@ -8679,7 +8679,7 @@ campaignTrail_temp.answer_feedback_json = [
 
 campaignTrail_temp.candidate_image_url = "https://i.imgur.com/PMlq9sD.png";
 campaignTrail_temp.running_mate_image_url = "https://i.imgur.com/OU1Qfh3.png";
-campaignTrail_temp.candidate_last_name = "Schwarzenegger";
+campaignTrail_temp.candidate_last_name = "<small>Schwarzenegger</small>";
 campaignTrail_temp.running_mate_last_name = "Paul";
 
 campaignTrail_temp.multiple_endings = true;
