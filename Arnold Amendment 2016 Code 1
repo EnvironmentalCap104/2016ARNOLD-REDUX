@@ -28,6 +28,64 @@ var changeGameDisp = (hide) => {
   document.getElementsByClassName("inner_window_w_desc")[0].style.display = disp
 };
 
+e.creditsPage = () => {
+  credits_html = `
+    <h3>Coding</h3>
+    <p>Environmental_Cap104</p>
+    <h3>Writing</h3>
+    <p>Environmental_Cap104</p>
+    <h3>Playtesting</h3>
+    <p>Environmental_Cap104</p>
+    <p>LBJ IS GOD</p>
+    <h3>Misc.</h3>
+    <p>DecstarG for the Music Player</p>
+    <p>Anyone that I forgot to credit and that contributed</p>
+    <h3>Music Credit</h3>
+    <p>JibJab - Ahnuld for Governor</p>
+    <p>The Terminator - Main Theme</p>
+    <p>Sia - Cheap Thrills</p>
+    <p>Luke Million - Arnold</p>
+    <p>Sheryl Crow - Real Gone</p><br><br>
+  `
+  changeGameDisp(true);
+  var spacer = document.createElement("amongusspacerthisisntarealelement");
+  spacer.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  document
+    .getElementsByClassName("inner_window_w_desc")[0]
+    .children[1].appendChild(spacer);
+    changeGameDisp(true);
+    var menuHeader = document.createElement("div");
+    menuHeader.classList.add("inner_window_front");
+    menuHeader.innerHTML = `<h1 style='font-family: "Times New Roman";'><font color='#0496f7'>Credits</font></h1>`;
+    menuHeader.id = "SOTUheader";
+    menuHeader.style = "height: 50px;background-color:#2d2d2d";
+    var newMenu = document.createElement("div");
+    newMenu.classList.add("inner_window_front");
+    newMenu.id = "SOTUmenu";
+    newMenu.style = `height:260px;background-color:#2d2d2d;color:white;overflow-y: scroll;`;
+
+    newMenu.innerHTML = credits_html;
+    let z = document.getElementById("game_window");
+    var backButton = document.createElement("button");
+    backButton.style =
+      "position: relative; bottom: -13px; left: -380px; width: 150px; height: 80px;font-size:40px;padding-top:5px;padding-left:8px";
+    backButton.id = "backSOTUBtn";
+    backButton.innerHTML = `<b>BACK</b>`;
+    backButton.onclick = function () {
+      document.getElementById("SOTUheader").remove();
+      document.getElementById("SOTUmenu").remove();
+      document.getElementById("backSOTUBtn").remove();
+      changeGameDisp(false);
+    };
+    z.appendChild(menuHeader);
+    z.appendChild(newMenu);
+    z.appendChild(backButton);
+
+}
+
+e.credits = "<button onclick='e.creditsPage()'>Credits</button>"
+
+
 // Initialise custom music
 
 $("#music_player")[0].children[0].style.display="none"
