@@ -8669,7 +8669,7 @@ campaignTrail_temp.answer_feedback_json = [
 
 campaignTrail_temp.candidate_image_url = "https://i.imgur.com/PMlq9sD.png";
 campaignTrail_temp.running_mate_image_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Secretary_of_Defense_Chuck_Hagel._130227-A-SS368-001.jpg/1200px-Secretary_of_Defense_Chuck_Hagel._130227-A-SS368-001.jpg";
-campaignTrail_temp.candidate_last_name = <small>Schwarzenegger</small>";
+campaignTrail_temp.candidate_last_name = "<small>Schwarzenegger</small>";
 campaignTrail_temp.running_mate_last_name = "Hagel";
 
 campaignTrail_temp.multiple_endings = true;
